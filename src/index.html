@@ -13,44 +13,93 @@
   </head>
   <body>
     <div class="dashboard">
-      <div class="container">
-        <div class="row">
-          <div class="col-3">
-            <nav class="dashboard__menu">
-              <ul class="dashboard__menu-list">
-                <li class="dashboard__menu-list-item">
-                  <a
-                    class="dashboard__menu-list-link dashboard__menu-list-link_active"
-                    href=""
-                    >Онлайн-запись</a
+      <div class="row">
+        <div class="col-2">
+          <nav class="dashboard__menu">
+            <ul class="dashboard__menu-list">
+              <li class="dashboard__menu-list-item">
+                <a
+                  class="dashboard__menu-list-link dashboard__menu-list-link_active"
+                  href=""
+                  >Онлайн-запись</a
+                >
+              </li>
+              <li class="dashboard__menu-list-item">
+                <a
+                  class="dashboard__menu-list-link dashboard__menu-list-link_active"
+                  href=""
+                  >История визитов</a
+                >
+              </li>
+              <li class="dashboard__menu-list-item">
+                <a
+                  class="dashboard__menu-list-link dashboard__menu-list-link_active"
+                  href=""
+                  >Файлы</a
+                >
+              </li>
+              <li class="dashboard__menu-list-item">
+                <a
+                  class="dashboard__menu-list-link dashboard__menu-list-link_active"
+                  href=""
+                  >Оплаты</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col-9">
+          <div class="dashboard__body">
+            <div class="contact-form">
+              <header
+                class="contact-form__header d-flex justify-content-between mb-4"
+              >
+                <div class="contact-form__logo logo">
+                  <img src="img/logo.png" alt="CRM logo" class="logo__img" />
+                </div>
+                <ul class="contact-form__tabs d-flex">
+                  <li class="contact-form__tab">1</li>
+                  <li class="contact-form__tab">2</li>
+                  <li class="contact-form__tab">3</li>
+                  <li class="contact-form__tab">4</li>
+                </ul>
+              </header>
+              <form>
+                <div class="mb-3">
+                  <label for="placeInput" class="contact-form__label form-label"
+                    >Место проведения</label
                   >
-                </li>
-                <li class="dashboard__menu-list-item">
-                  <a
-                    class="dashboard__menu-list-link dashboard__menu-list-link_active"
-                    href=""
-                    >История визитов</a
+                  <select class="form-select">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <input type="email" class="form-control" id="placeInput" />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label"
+                    >Password</label
                   >
-                </li>
-                <li class="dashboard__menu-list-item">
-                  <a
-                    class="dashboard__menu-list-link dashboard__menu-list-link_active"
-                    href=""
-                    >Файлы</a
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                  />
+                </div>
+                <div class="mb-3 form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="exampleCheck1"
+                  />
+                  <label class="form-check-label" for="exampleCheck1"
+                    >Check me out</label
                   >
-                </li>
-                <li class="dashboard__menu-list-item">
-                  <a
-                    class="dashboard__menu-list-link dashboard__menu-list-link_active"
-                    href=""
-                    >Оплаты</a
-                  >
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div class="col-9">
-            <div class="dashboard__body"></div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
