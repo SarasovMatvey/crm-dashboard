@@ -23,6 +23,7 @@ const ttf2woff2 = require("gulp-ttf2woff2");
 const imagemin = require("gulp-imagemin");
 const iconfontCss = require("gulp-iconfont-css");
 const iconfont = require("gulp-iconfont");
+const imageminPngquant = require("imagemin-pngquant");
 
 // VARS
 const config = {
@@ -103,18 +104,23 @@ function scripts() {
 }
 
 function images() {
-  return src(paths.img)
-    .pipe(
-      imagemin([
-        imagemin.gifsicle({ interlaced: true }),
-        imagemin.mozjpeg({ quality: 75, progressive: true }),
-        imagemin.optipng({ optimizationLevel: 5 }),
-        imagemin.svgo({
-          plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
-        }),
-      ])
-    )
-    .pipe(dest(paths.outputImgDir));
+  return (
+    src(paths.img)
+      // .pipe(
+      //   imagemin(
+      //     [
+      //       imagemin.gifsicle({ interlaced: true }),
+      //       imagemin.mozjpeg({ quality: 75, progressive: true }),
+      //       imagemin.optipng({ optimizationLevel: 5 }),
+      //       imagemin.svgo({
+      //         plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+      //       }),
+      //     ],
+      //     { plugins: [imageminPngquant()] }
+      //   )
+      // )
+      .pipe(dest(paths.outputImgDir))
+  );
 }
 
 function fonts() {

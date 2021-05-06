@@ -8,6 +8,13 @@
     padding-top: 100px
     height: 100vh
     background: #143a72
+    transition: .25s
+    +media('650px')
+      position: absolute
+      top: 0  
+      right: 100%
+  &__menu_open
+    right: calc(100% - 200px)
   &__menu-list
   &__menu-list-item
     width: 100%

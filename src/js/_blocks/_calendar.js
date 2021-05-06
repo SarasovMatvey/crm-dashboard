@@ -1,3 +1,6 @@
 (() => {
-  $(".calendar").datepicker();
+  if ($.datepicker) {
+
+    $(".calendar").datepicker();
+  }
 })();
