@@ -10,12 +10,6 @@
       crossorigin="anonymous"
     />
     <link
-      href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-
-    <link
       href="https://fonts.googleapis.com/css2?family=Rob/articles.htmloto:wght@400;700&display=swap"
       rel="stylesheet"
     />
@@ -40,7 +34,9 @@
               >
             </li>
             <li class="dashboard__menu-list-item">
-              <a class="dashboard__menu-list-link" href="history.html">История визитов</a>
+              <a class="dashboard__menu-list-link" href="history.html"
+                >История визитов</a
+              >
             </li>
             <li class="dashboard__menu-list-item">
               <a class="dashboard__menu-list-link" href="files.html">Файлы</a>
@@ -55,9 +51,9 @@
         <div class="dashboard__body">
           <div class="contact-form">
             <header
-              class="contact-form__header d-flex justify-content-between mb-4"
+              class="contact-form__header d-flex justify-content-between mb-4 flex-column flex-sm-row align-items-center"
             >
-              <div class="contact-form__logo logo">
+              <div class="contact-form__logo logo mb-3 mb-sm-0">
                 <img src="img/logo.png" alt="CRM logo" class="logo__img" />
               </div>
               <ul class="contact-form__tabs d-flex"></ul>
@@ -68,7 +64,7 @@
                   <label class="contact-form__label form-label"
                     >Место проведения</label
                   >
-                  <select class="form-select">
+                  <select name="place" class="form-select">
                     <option selected>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
@@ -77,7 +73,18 @@
                 </div>
                 <div class="mb-3">
                   <label class="contact-form__label form-label">Услуга</label>
-                  <select class="form-select">
+                  <select name="service" class="form-select">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+                <div class="mb-4">
+                  <label class="contact-form__label form-label"
+                    >Исполнитель
+                  </label>
+                  <select name="worker" class="form-select">
                     <option selected>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
@@ -85,73 +92,171 @@
                   </select>
                 </div>
                 <div class="mb-3">
-                  <label class="contact-form__label form-label"
-                    >Исполнитель
-                  </label>
-                  <select class="form-select">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
+                  <h6 class="contact-form__desc-title">Медицинский педикюр</h6>
+                  <ul class="contact-form__desc-list">
+                    <li class="contact-form__desc-item">
+                      Длительность 60 Минут
+                    </li>
+                    <li class="contact-form__desc-item">Цена 1500.00 Сом</li>
+                    <li class="contact-form__desc-item">
+                      Место проведения: Филиал №2 - Панфилова 45
+                    </li>
+                  </ul>
                 </div>
               </div>
               <div class="contact-form__content" data-content-index="1">
                 <div class="mb-3 d-flex">
-                  <div class="calendar"></div>
-                  <ul class="time">
-                    <li class="time__option">09:15</li>
-                    <li class="time__option">09:15</li>
-                    <li class="time__option">09:15</li>
-                    <li class="time__option">09:15</li>
-                    <li class="time__option">09:15</li>
-                    <li class="time__option">09:15</li>
-                    <li class="time__option">09:15</li>
-                    <li class="time__option">09:15</li>
-                    <li class="time__option">09:15</li>
-                    <li class="time__option">09:15</li>
-                  </ul>
+                  <div class="calendar">
+                    <input
+                      class="hidden-field calendar__field"
+                      name="date"
+                      type="text"
+                    />
+                    <div class="calendar__body"></div>
+                  </div>
+                  <div class="time">
+                    <input
+                      class="hidden-field time__field"
+                      name="time"
+                      type="text"
+                    />
+                    <ul class="time__inner">
+                      <li class="time__option">01:15</li>
+                      <li class="time__option">02:15</li>
+                      <li class="time__option">03:15</li>
+                      <li class="time__option">04:15</li>
+                      <li class="time__option">05:15</li>
+                      <li class="time__option">06:15</li>
+                      <li class="time__option">07:15</li>
+                      <li class="time__option">08:15</li>
+                      <li class="time__option">09:15</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               <div class="contact-form__content" data-content-index="2">
-                <div class="mb-3 d-flex align-items-center">
-                  <label class="contact-form__label form-label"
-                    >Номер телефона</label
+                <div class="contact-form__sign-in">
+                  <div class="mb-3 d-flex d-flex flex-column flex-sm-row">
+                    <label class="contact-form__label form-label"
+                      >Номер телефона</label
+                    >
+                    <div class="d-flex flex-grow-1">
+                      <input
+                        type="text"
+                        name="confirmed-tel"
+                        class="tel-field form-control"
+                        placeholder="Номер телефона"
+                      />
+                      <button class="contact-form__sms-btn">
+                        Отправить СМС
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="contact-form__sms-confirm mb-3 flex-column flex-sm-row"
                   >
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Номер телефона"
-                  />
+                    <label class="contact-form__label form-label"
+                      >Код подтверждения</label
+                    >
+                    <input
+                      type="text"
+                      name="confirm"
+                      class="form-control"
+                      placeholder="Код подтверждения"
+                    />
+                  </div>
                 </div>
-                <div class="mb-3 d-flex align-items-center">
-                  <label class="contact-form__label form-label"
-                    >Код подтверждения</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control ml-3"
-                    placeholder="Код подтверждения"
-                  />
+                <div class="contact-form__sign-up contact-form__sign-up_hidden">
+                  <div class="row">
+                    <div class="col-6 mb-3">
+                      <label class="contact-form__label form-label">Имя</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="user-name"
+                        disabled
+                        required
+                      />
+                    </div>
+                    <div class="col-6 mb-3">
+                      <label class="contact-form__label form-label"
+                        >E-mail</label
+                      >
+                      <input
+                        type="email"
+                        name="user-email"
+                        class="form-control"
+                        disabled
+                        required
+                      />
+                    </div>
+                    <div class="col-6 mb-3">
+                      <label class="contact-form__label form-label"
+                        >Фамилия</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="user-surname"
+                        disabled
+                        required
+                      />
+                    </div>
+                    <div class="col-6 mb-3">
+                      <label class="contact-form__label form-label"
+                        >Номер телефона</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="user-tel"
+                        disabled
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-5 d-flex justify-content-center">
+                  <button class="btn btn-primary contact-form__sign-up-btn">
+                    Зарегистрироваться
+                  </button>
                 </div>
               </div>
               <div class="contact-form__content row" data-content-index="3">
                 <div class="col-6">
                   <h2 class="display-6">Назначение</h2>
-                  <p>Услуга: Медицинский педикюр</p>
-                  <p>Исполнитель: Иван Иванов</p>
-                  <p>Начало: 04/05/2021 09:00</p>
-                  <p>Timezone: UTC</p>
-                  <p>Цена: 1500.00 Сом</p>
+                  <ul class="contact-form__final-info-list">
+                    <li class="contact-form__final-info-item">
+                      Услуга: Медицинский педикюр
+                    </li>
+                    <li class="contact-form__final-info-item">
+                      Исполнитель: Иван Иванов
+                    </li>
+                    <li class="contact-form__final-info-item">
+                      Начало: 04/05/2021 09:00
+                    </li>
+                    <li class="contact-form__final-info-item">Timezone: UTC</li>
+                    <li class="contact-form__final-info-item">
+                      Цена: 1500.00 Сом
+                    </li>
+                  </ul>
                 </div>
-                <div class="col-3">
+                <div class="col-6">
                   <h2 class="display-6">Заказчик</h2>
-                  <p>Заказчик: искендер нурбаев</p>
-                  <p>Номер телефона: +996(555) 55-55-55</p>
-                  <p>E-mail: azamat.boronchiev@gmail.com</p>
+                  <ul class="contact-form__final-info-list">
+                    <li class="contact-form__final-info-item">
+                      Заказчик: искендер нурбаев
+                    </li>
+                    <li class="contact-form__final-info-item">
+                      Номер телефона: +996(555) 55-55-55
+                    </li>
+                    <li class="contact-form__final-info-item">
+                      E-mail: azamat.boronchiev@gmail.com
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <div class="contact-form__controls d-flex">
+              <div class="contact-form__controls d-flex justify-content-center">
                 <button class="contact-form__prev-btn btn btn-primary">
                   <i class="fas fa-chevron-left"></i>
                   Предыдущий
@@ -174,11 +279,6 @@
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
-      integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
       crossorigin="anonymous"
     ></script>
     <script src="./js/main.js"></script>

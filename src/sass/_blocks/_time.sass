@@ -1,9 +1,10 @@
 .time
   flex-grow: 1
-  margin-left: 15px
-  height: 400px
-  overflow-y: scroll
-  max-height: 250px
+  &__inner
+    margin-left: 15px
+    height: 400px
+    overflow-y: scroll
+    max-height: 250px
   &__option
     border: 1px solid #0f2e5c
     border-radius: 5px
@@ -13,3 +14,6 @@
     &:hover
       background: #1e53a3
       color: #fff
+  &__option_active
+    background: #1e53a3
+    color: #fff

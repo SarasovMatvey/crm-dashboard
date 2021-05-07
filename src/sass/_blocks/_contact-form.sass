@@ -26,6 +26,12 @@
     white-space: nowrap
     font-weight: 900
     margin-right: 1rem
+  &__label_required
+    &::after
+      content: '*'
+      display: inline-block
+      margin-left: 5px
+      color: red
   &__content_hidden
     display: none !important
     background: red
@@ -35,3 +41,20 @@
     margin-right: .5rem
   &__controls
     margin-top: auto
+  &__sms-btn
+    white-space: nowrap
+    background: none
+    border: none
+    color: #1e53a3
+    &:hover
+      text-decoration: underline
+  &__sms-confirm 
+    display: none 
+  &__sign-in_hidden
+    display: none
+    input 
+      disabled: disabled
+  &__sign-up_hidden
+    display: none
+    input 
+      disabled: disabled
