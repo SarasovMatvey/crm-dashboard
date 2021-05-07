@@ -1,10 +1,16 @@
 .time
   flex-grow: 1
+  margin-left: 20px
+  +media('500px')
+    margin-left: 0
+    width: 100%
+    max-width: 272px
   &__inner
-    margin-left: 15px
     height: 400px
     overflow-y: scroll
     max-height: 250px
+    +media('500px')
+      max-height: 150px
   &__option
     border: 1px solid #0f2e5c
     border-radius: 5px

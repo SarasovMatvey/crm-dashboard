@@ -8,6 +8,7 @@ const del = require("del");
 const sourcemaps = require("gulp-sourcemaps");
 const concat = require("gulp-concat");
 const gulpif = require("gulp-if");
+const ghPages = require("gulp-gh-pages");
 
 // STYLES
 const sass = require("gulp-sass");
@@ -163,6 +164,10 @@ function watcher(done) {
   done();
 }
 
+function deploy() {
+  return src(paths.baseDir + "**/*").pipe(ghPages());
+}
+
 exports.browsersync = browsersync;
 exports.scripts = scripts;
 exports.styles = styles;
@@ -173,6 +178,7 @@ exports.images = images;
 exports.fonts = fonts;
 exports.iconFont = iconFont;
 exports.doc = doc;
+exports.deploy = deploy;
 
 exports.doc = series(doc);
 

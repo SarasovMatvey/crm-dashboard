@@ -1,7 +1,9 @@
 .dashboard
   &__body
     flex-grow: 1
-    padding: 20px 30px
+    padding: 20px 30px 30px
+    +media('480px')
+      padding-top: 10px
   &__menu
     flex-shrink: 0
     width: 200px
@@ -10,12 +12,20 @@
     transition: .25s
     +media('650px')
       height: 100%
-      position: absolute
+      position: fixed
       top: 0  
       right: 100%
+      z-index: 10
   &__menu_open
     right: calc(100% - 200px)
   &__menu-list
+    position: fixed
+    left: 0
+    top: 15vh
+    width: 200px
+    +media('650px')
+      position: static
+      width: auto
   &__menu-list-item
     width: 100%
     background: #143a72
