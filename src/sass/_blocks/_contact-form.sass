@@ -5,10 +5,12 @@
   min-height: 530px
   display: flex
   flex-direction: column
+  justify-content: center
   form
-    flex-grow: 1
-    display: flex
-    flex-direction: column
+    +media('650px')
+      flex-grow: 1
+      display: flex
+      flex-direction: column
   &__tab
     width: 40px
     height: 40px
@@ -23,6 +25,9 @@
       margin-right: 0
   &__tab_active
     background: #143a72
+  &__content_hidden
+    display: none !important
+    background: red
   &__label
     white-space: nowrap
     font-weight: 900
@@ -33,20 +38,17 @@
       display: inline-block
       margin-left: 5px
       color: red
-  &__content_hidden
-    display: none !important
-    background: red
-  p
-    margin: 0
   &__prev-btn
     margin-right: .5rem
+    +media('425px')
+      margin-right: 0
   &__controls
-    margin-top: auto
     +media('650px')
+      margin-top: auto
       justify-content: flex-start !important
     +media('425px')
       flex-direction: column
-      align-items: flex-start
+      max-width: 160px
       button
         margin-bottom: .5rem
   &__next-btn
@@ -74,3 +76,13 @@
     +media('500px')
       flex-direction: column
       align-items: center
+  &__final-info-list
+    display: inline-block
+    max-width: 300px
+  &__final-info-item
+    text-align: right
+    display: flex
+    gap: 10px 
+  &__final-info-title
+    white-space: nowrap
+    margin-right: auto

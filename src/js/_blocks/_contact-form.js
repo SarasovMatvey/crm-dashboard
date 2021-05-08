@@ -28,7 +28,7 @@
 
   addClassInLabelsForRequiredFields();
 
-  let formCurrentSlide = 0;
+  let formCurrentSlide = 3;
   showTabs();
   setActiveTab(formCurrentSlide);
   setFormContent(formCurrentSlide);
