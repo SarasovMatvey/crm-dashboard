@@ -1,73 +1,11 @@
 (() => {
-  // const filials = [
-  //   {
-  //     filialName: 'Филиал №1 - Токомбаева 23/3',
-  //     services: [
-  //       {
-  //         serviceName: 'Медицинский педикюр',
-  //         performers: ['Иван Иванов', 'John Doe'],
-  //         descRows: [
-  //           'Длительность 60 Минут',
-  //           'Цена 1500.00 Сом',
-  //           'Место проведения: Филиал №2 - Панфилова 45',
-  //         ]
-  //       },
-  //       {
-  //         serviceName: 'СПА',
-  //         performers: ['Иван Иванов', 'John Doe'],
-  //         descRows: [
-  //           'Какое-нибудь СПА',
-  //           'Длительность 120 Минут',
-  //           'Цена 1500.00 Сом',
-  //           'Место проведения: Филиал №3 - Исанова 10',
-  //         ]
-  //       }
-  //     ]
-  //   }
-  // ]
-
   addClassInLabelsForRequiredFields();
 
-  let formCurrentSlide = 3;
+  let formCurrentSlide = 0;
   showTabs();
   setActiveTab(formCurrentSlide);
   setFormContent(formCurrentSlide);
   refreshControlBtns(formCurrentSlide);
-
-  $(".contact-form__sms-btn").on("click", (e) => {
-    e.preventDefault();
-    const smsConfirm = $(".contact-form__sms-confirm");
-    smsConfirm.css("display", "flex");
-  });
-
-  let signUpIsOpen = false;
-  $(".contact-form__sign-up-btn").on("click", (e) => {
-    e.preventDefault();
-    signUpIsOpen = !signUpIsOpen;
-    $(".contact-form__sign-in").toggleClass("contact-form__sign-in_hidden");
-    $(".contact-form__sign-up").toggleClass("contact-form__sign-up_hidden");
-    if (signUpIsOpen) {
-      e.currentTarget.textContent = "Уже зарегистрированы?";
-      $(".contact-form__sign-in input, .contact-form__sign-in textarea").prop(
-        "disabled",
-        true
-      );
-      $(".contact-form__sign-up input, .contact-form__sign-in textarea").prop(
-        "disabled",
-        false
-      );
-    } else {
-      e.currentTarget.textContent = "Зарегистрироваться";
-      $(".contact-form__sign-up input, .contact-form__sign-in textarea").prop(
-        "disabled",
-        true
-      );
-      $(".contact-form__sign-in input, .contact-form__sign-in textarea").prop(
-        "disabled",
-        false
-      );
-    }
-  });
 
   $(".contact-form__next-btn").on("click", (e) => {
     e.preventDefault();

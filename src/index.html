@@ -61,9 +61,7 @@
             <form>
               <div class="contact-form__content mb-5" data-content-index="0">
                 <div class="mb-3">
-                  <label class="contact-form__label form-label"
-                    >Место проведения</label
-                  >
+                  <label class="contact-form__label form-label">Филиал</label>
                   <select name="place" class="form-select">
                     <option selected>Open this select menu</option>
                     <option value="1">One</option>
@@ -90,18 +88,6 @@
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                   </select>
-                </div>
-                <div class="mb-3">
-                  <h6 class="contact-form__desc-title">Медицинский педикюр</h6>
-                  <ul class="contact-form__desc-list">
-                    <li class="contact-form__desc-item">
-                      Длительность 60 Минут
-                    </li>
-                    <li class="contact-form__desc-item">Цена 1500.00 Сом</li>
-                    <li class="contact-form__desc-item">
-                      Место проведения: Филиал №2 - Панфилова 45
-                    </li>
-                  </ul>
                 </div>
               </div>
               <div class="contact-form__content mb-5" data-content-index="1">
@@ -134,97 +120,9 @@
                   </div>
                 </div>
               </div>
-              <div class="contact-form__content mb-5" data-content-index="2">
-                <div class="contact-form__sign-in">
-                  <div class="mb-3 d-flex d-flex flex-column flex-sm-row">
-                    <label class="contact-form__label form-label"
-                      >Номер телефона</label
-                    >
-                    <div class="d-flex flex-grow-1">
-                      <input
-                        type="text"
-                        name="confirmed-tel"
-                        class="tel-field form-control"
-                        placeholder="Номер телефона"
-                      />
-                      <button class="contact-form__sms-btn">
-                        Отправить СМС
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="contact-form__sms-confirm mb-3 flex-column flex-sm-row"
-                  >
-                    <label class="contact-form__label form-label"
-                      >Код подтверждения</label
-                    >
-                    <input
-                      type="text"
-                      name="confirm"
-                      class="form-control"
-                      placeholder="Код подтверждения"
-                    />
-                  </div>
-                </div>
-                <div class="contact-form__sign-up contact-form__sign-up_hidden">
-                  <div class="row">
-                    <div class="col-6 mb-3">
-                      <label class="contact-form__label form-label">Имя</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="user-name"
-                        disabled
-                        required
-                      />
-                    </div>
-                    <div class="col-6 mb-3">
-                      <label class="contact-form__label form-label"
-                        >E-mail</label
-                      >
-                      <input
-                        type="email"
-                        name="user-email"
-                        class="form-control"
-                        disabled
-                        required
-                      />
-                    </div>
-                    <div class="col-6 mb-3">
-                      <label class="contact-form__label form-label"
-                        >Фамилия</label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="user-surname"
-                        disabled
-                        required
-                      />
-                    </div>
-                    <div class="col-6 mb-3">
-                      <label class="contact-form__label form-label"
-                        >Номер телефона</label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="user-tel"
-                        disabled
-                        required
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="mt-5 d-flex justify-content-center">
-                  <button class="btn btn-primary contact-form__sign-up-btn">
-                    Зарегистрироваться
-                  </button>
-                </div>
-              </div>
               <div
                 class="contact-form__content mb-5 row text-center text-md-start"
-                data-content-index="3"
+                data-content-index="2"
               >
                 <div class="col-12 col-md-6 mb-4 mb-md-0">
                   <h2 class="display-6">Назначение</h2>
@@ -242,10 +140,20 @@
                       Иван Иванов
                     </li>
                     <li class="contact-form__final-info-item">
+                      <span class="contact-form__final-info-title">Место:</span>
+                      04/05/2021 09:00
+                    </li>
+                    <li class="contact-form__final-info-item">
                       <span class="contact-form__final-info-title"
                         >Начало:</span
                       >
-                      04/05/2021 09:00
+                      Место проведения: Филиал №2 - Панфилова 45
+                    </li>
+                    <li class="contact-form__final-info-item">
+                      <span class="contact-form__final-info-title"
+                        >Длительность:</span
+                      >
+                      60 Минут
                     </li>
                     <li class="contact-form__final-info-item">
                       <span class="contact-form__final-info-title"
