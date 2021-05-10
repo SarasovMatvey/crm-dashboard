@@ -1,5 +1,8 @@
 .auth
   &__form
+    display: flex
+    flex-direction: column
+    align-items: center
     max-width: 600px
     padding: 0 10px
     margin: 0 auto
@@ -12,6 +15,10 @@
     color: #1e53a3
     &:hover
       text-decoration: underline
+  &__submit-btn, &__sign-up-btn
+    +media('576px')
+      width: 100%
+      max-width: 300px
   &__sign-in_hidden
     display: none
     input 

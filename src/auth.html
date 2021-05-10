@@ -24,21 +24,25 @@
           <div
             class="mb-3 d-flex d-flex flex-column flex-sm-row align-items-start"
           >
-            <label class="auth__label form-label me-2">Номер телефона</label>
-            <div class="d-flex flex-grow-1">
+            <label class="auth__label text-nowrap form-label me-2"
+              >Номер телефона</label
+            >
+            <div
+              class="d-flex flex-grow-1 flex-column flex-sm-row align-items-start"
+            >
               <input
                 type="text"
                 name="confirmed-tel"
-                class="tel-field form-control"
+                class="tel-field form-control mb-1 mb-sm-0"
                 placeholder="Номер телефона"
               />
               <button class="auth__sms-btn">Отправить СМС</button>
             </div>
           </div>
-          <div
-            class="auth__sms-confirm mb-3 flex-column flex-sm-row align-items-start"
-          >
-            <label class="auth__label form-label me-2">Код подтверждения</label>
+          <div class="auth__sms-confirm mb-3 flex-column">
+            <label class="auth__label text-nowrap form-label me-2"
+              >Код подтверждения</label
+            >
             <input
               type="text"
               name="confirm"
@@ -50,7 +54,7 @@
         <div class="auth__sign-up auth__sign-up_hidden">
           <div class="row">
             <div class="col-6 mb-3">
-              <label class="auth__label form-label">Имя</label>
+              <label class="auth__label text-nowrap form-label">Имя</label>
               <input
                 type="text"
                 class="form-control"
@@ -60,7 +64,7 @@
               />
             </div>
             <div class="col-6 mb-3">
-              <label class="auth__label form-label">E-mail</label>
+              <label class="auth__label text-nowrap form-label">E-mail</label>
               <input
                 type="email"
                 name="user-email"
@@ -70,7 +74,7 @@
               />
             </div>
             <div class="col-6 mb-3">
-              <label class="auth__label form-label">Фамилия</label>
+              <label class="auth__label text-nowrap form-label">Фамилия</label>
               <input
                 type="text"
                 class="form-control"
@@ -80,7 +84,9 @@
               />
             </div>
             <div class="col-6 mb-3">
-              <label class="auth__label form-label">Номер телефона</label>
+              <label class="auth__label text-nowrap form-label"
+                >Номер телефона</label
+              >
               <input
                 type="text"
                 class="form-control"
@@ -91,8 +97,12 @@
             </div>
           </div>
         </div>
-        <div class="mt-5 d-flex justify-content-center">
-          <button class="btn btn-primary auth__sign-up-btn me-2">
+        <div
+          class="mt-3 mt-sm-5 d-flex justify-content-center flex-column flex-sm-row"
+        >
+          <button
+            class="btn btn-primary auth__sign-up-btn me-0 me-sm-2 mb-2 mb-sm-0"
+          >
             Зарегистрироваться
           </button>
           <button class="auth__submit-btn btn btn-success" type="submit">
