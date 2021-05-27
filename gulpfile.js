@@ -42,13 +42,17 @@ const paths = {
   styles: "./src/sass/**/*.sass",
   js: "./src/js/**/*.js",
   img: "./src/img/**/*",
+  sw: "./src/sw.js",
   fonts: "./src/fonts/**/*.*",
+  manifest: "./src/manifest/**/*",
   forIconfont: "./src/fonts/for-iconfont/*.svg",
+  outputSwDir: "./dist/",
   outputCssDir: "./dist/css",
   outputJsDir: "./dist/js",
   outputImgDir: "./dist/img",
   outputFontsDir: "./dist/fonts",
   outputIconfontDir: "./dist/fonts/iconfont",
+  outputManifestDir: "./dist/manifest/",
 };
 
 const names = {
@@ -164,6 +168,14 @@ function watcher(done) {
   done();
 }
 
+function manifest() {
+  return src(paths.manifest).pipe(dest(paths.outputManifestDir));
+}
+
+function sw() {
+  return src(paths.sw).pipe(dest(paths.outputSwDir));
+}
+
 function deploy() {
   return src(paths.baseDir + "**/*").pipe(ghPages());
 }
@@ -179,17 +191,19 @@ exports.fonts = fonts;
 exports.iconFont = iconFont;
 exports.doc = doc;
 exports.deploy = deploy;
+exports.manifest = manifest;
+exports.sw = sw;
 
 exports.doc = series(doc);
 
 exports.build = series(
   clean,
-  parallel(html, scripts, styles, fonts, images, iconFont)
+  parallel(html, scripts, styles, fonts, images, iconFont, manifest, sw)
 );
 
 exports.default = series(
   clean,
-  parallel(html, scripts, styles, fonts, images, iconFont),
+  parallel(html, scripts, styles, fonts, images, iconFont, manifest, sw),
   browsersync,
   watcher
 );
