@@ -4,13 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="manifest/dunplab-manifest-41727.json" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
       crossorigin="anonymous"
     />
-  <link
+    <link
       href="https://fonts.googleapis.com/css2?family=Rob/articles.htmloto:wght@400;700&display=swap"
       rel="stylesheet"
     />
@@ -50,54 +52,30 @@
           </ul>
         </nav>
         <div class="dashboard__body">
-          <table class="payments-table table">
-            <thead>
-              <tr>
-                <th>№ платежа</th>
-                <th>Плательщик/Получатель</th>
-                <th>Сумма</th>
-                <th>Ответственный</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Марк</td>
-                <td>2222</td>
-                <td>Джон</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Марк</td>
-                <td>2222</td>
-                <td>Джон</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Марк</td>
-                <td>2222</td>
-                <td>Джон</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Марк</td>
-                <td>2222</td>
-                <td>Джон</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Марк</td>
-                <td>2222</td>
-                <td>Джон</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Марк</td>
-                <td>2222</td>
-                <td>Джон</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="dashboard-table">
+            <table class="dashboard-table__inner table table-borderless">
+              <thead class="border">
+                <tr class="border">
+                  <th>Тип платежа</th>
+                  <th>Плательщик/Получатель</th>
+                  <th>Связан с</th>
+                  <th>Сумма</th>
+                  <th>Вид оплаты</th>
+                  <th>Ответственный</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border">
+                  <td>Приход</td>
+                  <td></td>
+                  <td></td>
+                  <td>2323лв</td>
+                  <td></td>
+                  <td>Айнура</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
