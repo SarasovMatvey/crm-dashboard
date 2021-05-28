@@ -23,8 +23,8 @@
       <div class="confirm-push-modal__body p-5 bg-white">
         <h2 class="confirm-push-modal__title mb-2">Хотите ли вы получать push уведомления? Вы сможете всегда включить эту возможность по необходимости.</h2>
         <div class="confirm-push-modal__btns d-flex">
-          <button class="btn btn-danger me-2">Отклоняю</button>
-          <button class="btn btn-success">Принимаю</button>
+          <button class="confirm-push-modal__close-btn btn btn-danger me-2">Отклоняю</button>
+          <button class="confirm-push-modal__confirm-btn btn btn-success">Принимаю</button>
         </div>
       </div>
     </div>
@@ -37,7 +37,7 @@
     </div>
     <div class="dashboard">
       <div class="d-flex">
-        <nav class="dashboard__menu">
+        <nav class="dashboard__menu d-flex flex-column">
           <ul class="dashboard__menu-list">
             <li class="dashboard__menu-list-item">
               <a class="dashboard__menu-list-link" href="index.html"
@@ -58,6 +58,12 @@
               >
             </li>
           </ul>
+          <div class="custom-control custom-checkbox mt-auto px-3 pb-3">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="customCheck1">
+              <label class="form-check-label text-white" for="customCheck1">Push уведомления</label>
+            </div>
+          </div>
         </nav>
         <div class="dashboard__body">
           <div class="contact-form">

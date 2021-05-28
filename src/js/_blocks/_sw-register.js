@@ -1,8 +1,7 @@
 // TODO: generate VAPID key
 const appServerKey = 'BHLCrsFGJQIVgg-XNp8F59C8UFF49GAVxvYMvyCURim3nMYI5TMdsOcrh-yJM7KbtZ3psi5FhfvaJbU_11jwtPY';
 
-// TODO
-const pushButton = document.querySelector('.push-button');
+const pushButton = document.querySelector('.confirm-push-modal__confirm-btn');
 
 let hasSubscription = false;
 let serviceWorkerRegistration = null;
