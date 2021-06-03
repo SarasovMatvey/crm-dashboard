@@ -25,9 +25,11 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', e => {
-  console.log('Fetching');
-  // TODO: uncomment this
-  // e.respondWith(caches.match(e.request));
+  e.respondWith(
+    fetch(e.request).catch(() => {
+      return caches.match(e.request);
+    })
+  );
 });
 
 self.addEventListener('push', function(event) {
