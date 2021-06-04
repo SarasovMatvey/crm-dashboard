@@ -19,6 +19,15 @@
     <title>Dashboard</title>
   </head>
   <body>
+    <div class="confirm-push-modal fixed-top w-100 h-100 d-flex justify-content-center align-items-center">
+      <div class="confirm-push-modal__body p-5 bg-white">
+        <h2 class="confirm-push-modal__title mb-2">Хотите ли вы получать push уведомления? Вы сможете всегда включить эту возможность по необходимости.</h2>
+        <div class="confirm-push-modal__btns d-flex">
+          <button class="confirm-push-modal__close-btn btn btn-danger me-2">Отклоняю</button>
+          <button class="confirm-push-modal__confirm-btn btn btn-success">Принимаю</button>
+        </div>
+      </div>
+    </div>
     <div class="dashboard-hamburger">
       <button class="hamburger hamburger--slider" type="button">
         <span class="hamburger-box">
@@ -28,7 +37,7 @@
     </div>
     <div class="dashboard">
       <div class="d-flex">
-        <nav class="dashboard__menu">
+        <nav class="dashboard__menu d-flex flex-column">
           <ul class="dashboard__menu-list">
             <li class="dashboard__menu-list-item">
               <a class="dashboard__menu-list-link" href="index.html"
@@ -49,6 +58,12 @@
               >
             </li>
           </ul>
+          <div class="custom-control custom-checkbox mt-auto px-3 pb-3">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="customCheck1">
+              <label class="form-check-label text-white" for="customCheck1">Push уведомления</label>
+            </div>
+          </div>
         </nav>
         <div class="dashboard__body">
           <div class="contact-form">
@@ -218,11 +233,7 @@
         </div>
       </div>
     </div>
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
+    
     <script src="./js/main.js"></script>
   </body>
 </html>

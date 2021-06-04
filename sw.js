@@ -1,8 +1,13 @@
 const CACHE_NAME = 'crm-tech-cache-v1';
 const urlsToCache = [
-  '/crm-dashboard/',
-  '/crm-dashboard/js/main.js',
-  '/crm-dashboard/css/style.css',
+  '/',
+  '/index.html',
+  '/auth.html',
+  '/files.html',
+  '/history.html',
+  '/payments.html',
+  '/js/main.js',
+  '/css/style.css',
 ];
 
 self.addEventListener('install', e => {
@@ -10,7 +15,7 @@ self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-	return cache.addAll(urlsToCache);
+	      return cache.addAll(urlsToCache);
       })
   );
 });
@@ -20,6 +25,31 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', e => {
-  console.log('Fetching');
-  e.respondWith(caches.match(e.request));
+  e.respondWith(
+    fetch(e.request).catch(() => {
+      return caches.match(e.request);
+    })
+  );
+});
+
+self.addEventListener('push', function(event) {
+  let notificationData = {};
+  
+  try {
+    notificationData = event.data.json();
+  } catch (e) {
+    // TODO
+    notificationData = {
+      title: 'Default title',
+      body: 'Default message',
+      icon: '/default-icon.png'
+    };
+  }
+  
+  event.waitUntil(
+    self.registration.showNotification(notificationData.title, {
+      body: notificationData.body,
+      icon: notificationData.icon
+    })
+  );
 });
