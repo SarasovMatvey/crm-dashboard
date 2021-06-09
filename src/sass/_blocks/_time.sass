@@ -9,6 +9,13 @@
     height: 400px
     overflow-y: scroll
     max-height: 250px
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 10px
+    +media('860px')
+      grid-template-columns: repeat(2, 1fr)
+    +media('740px')
+      grid-template-columns: 1fr
     +media('500px')
       max-height: 150px
   &__option

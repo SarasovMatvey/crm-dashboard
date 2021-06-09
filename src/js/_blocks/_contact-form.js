@@ -1,7 +1,15 @@
 (() => {
-  addClassInLabelsForRequiredFields();
-
+  let filialsInfo = null;
   let formCurrentSlide = 0;
+  let filialField = $("select[name='place']");
+  let serviceField = $("select[name='service']");
+  let workerField = $("select[name='worker']");
+
+  addClassInLabelsForRequiredFields();
+  setFilialsInfo().then(() => {
+    setFilialsNames();
+    setFilial();
+  });
   showTabs();
   setActiveTab(formCurrentSlide);
   setFormContent(formCurrentSlide);
@@ -24,6 +32,14 @@
     setActiveTab(formCurrentSlide);
     setFormContent(formCurrentSlide);
     refreshControlBtns(formCurrentSlide);
+  });
+
+  filialField.on('change', e => {
+    setFilial();
+  });
+
+  serviceField.on('change', e => {
+    setService();
   });
 
   function isAllFieldsNotEmpty(slide) {
@@ -91,5 +107,82 @@
       .parent()
       .find(".contact-form__label")
       .addClass("contact-form__label_required");
+  }
+
+  function setFilialsInfo() {
+    return fetch("http://localhost/rest/filials")
+            .then(resp => {
+              if (resp.ok) return resp.json();
+            })
+            .then(data => {
+              filialsInfo = data.data;
+            })
+  }
+
+  function setSelectOptions(selectEl, options) {
+    $(selectEl).html('');
+    
+    for (const option of options) {
+      const {isSelected, text, value} = option;
+      selectEl.append(`
+        <option 
+          ${isSelected ? 'selected' : ''} 
+          value="${value}"
+        >${text}</option>
+      `);
+    };
+  }
+
+  function setFilialsNames() {
+    filialField.html('');
+    filialsNames = Object.keys(filialsInfo);
+    for (const filialName of filialsNames) {
+      filialField.append(`
+        <option 
+          value="${filialName}"
+        >${filialName}</option>
+      `)
+    }
+  }
+
+  function setFilial() {
+    const filialName = filialField.val();
+
+    const services = filialsInfo[filialName].map(current => ({
+      text: current.name,
+      value: current.id,
+      isSelected: false,
+    }), []);
+
+    const workers = filialsInfo[filialName][0].workers.map(current => ({
+      text: current.name,
+      value: current.name,
+      isSelected: false,
+    }));
+
+    setSelectOptions(serviceField, services);
+    setSelectOptions(workerField, workers);
+  }
+
+  function setService() {
+    const filialName = filialField.val();
+    const serviceId = serviceField.val();
+
+    let selectedServiceInfo;
+
+    for (const service of filialsInfo[filialName]) {
+      if (service.id === serviceId) {
+        selectedServiceInfo = service;
+        break;
+      } 
+    }
+
+    const workers = selectedServiceInfo.workers.map(current => ({
+      text: current.name,
+      value: current.name,
+      isSelected: false,
+    }));
+
+    setSelectOptions(workerField, workers);
   }
 })();
